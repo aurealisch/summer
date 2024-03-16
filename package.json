@@ -1,0 +1,19 @@
+{
+  "name": "summer",
+  "description": "",
+  "version": "0.1.0",
+  "module": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build --compile --minify --sourcemap src/main.ts --outfile bin/summer"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}
