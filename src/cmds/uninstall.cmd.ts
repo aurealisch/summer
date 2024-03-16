@@ -1,11 +1,9 @@
 import { program } from "commander";
-import BinExeUninstaller from "../services/BinExeUninstaller";
-import parseDestination from "../services/parseDestination";
+import BinUninstaller from "../svcs/BinUninstaller";
+import parseDest from "../svcs/parseDest";
 
-program
-  .command("uninstall <destination>")
-  .action(async (destination: string) => {
-    await new BinExeUninstaller({
-      ...parseDestination(destination),
-    }).uninstallBinExe();
-  });
+program.command("uninstall <dest>").action(async (dest: string) => {
+  await new BinUninstaller({
+    ...parseDest(dest),
+  }).uninstallBin();
+});
