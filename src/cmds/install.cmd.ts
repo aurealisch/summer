@@ -1,9 +1,9 @@
 import { program } from "commander";
-import installBinExe from "../modules/installBinExe";
-import parseDestination from "../modules/parseDestination";
+import BinExeInstaller from "../services/BinExeInstaller";
+import parseDestination from "../services/parseDestination";
 
 program.command("install <destination>").action(async (destination: string) => {
-  await installBinExe({
+  await new BinExeInstaller({
     ...parseDestination(destination),
-  });
+  }).installBinExe();
 });

@@ -1,12 +1,12 @@
 import { program } from "commander";
-import parseDestination from "../modules/parseDestination";
-import runBinExe from "../modules/runBinExe";
+import BinExeRunner from "../services/BinExeRunner";
+import parseDestination from "../services/parseDestination";
 
 program
   .command("run <destination> <input>")
   .action(async (destination: string, input: string) => {
-    await runBinExe({
+    await new BinExeRunner({
       ...parseDestination(destination),
       input,
-    });
+    }).runBinExe();
   });
