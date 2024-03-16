@@ -8,13 +8,13 @@ export default function parseDest(dest: string): Opts {
   const res = dest.match(regExp);
 
   if (res === null) {
-    throw Error("");
+    throw Error(""); // TODO
   }
 
   const groups = res.groups;
 
   if (groups === undefined) {
-    throw Error("");
+    throw Error(""); // TODO
   }
 
   return JSON.parse(JSON.stringify(groups));

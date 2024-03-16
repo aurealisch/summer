@@ -4,7 +4,7 @@ interface Opts {
   path: string;
 }
 
-interface GitHubRepoContent {
+export interface GitHubRepoContent {
   path: string;
   download_url: string;
   content: string;

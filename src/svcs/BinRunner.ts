@@ -1,6 +1,6 @@
 import { type Opts } from "../types";
 
-export default class BinExeRunner {
+export default class BinRunner {
   constructor(private opts: Opts & { input: string }) {}
 
   async runBin() {}
